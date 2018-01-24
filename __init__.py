@@ -21,7 +21,7 @@ def choose_excercise(excercise_options):
 
 def choose_number():
     """Determine number of repetitions for the selected exercise."""
-    np.random.normal(loc=10, scale=5, size=100).round().astype(int)
+    return random.normal(loc=10, scale=5, size=100).round().astype(int)
 
 
 @match_crontab("* * * * *", timezone="Europe/London")
