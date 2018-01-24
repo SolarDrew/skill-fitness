@@ -33,6 +33,11 @@ async def random_excercise(opsdroid, config, message):
     # Create an empty message to respond to
     message = Message("", None, room, connector)
 
+    # Choose who's doing the excercise this time.
+    user = choose_victim(['SolarDrew'])
+    excercise = choose_excercise(['sit ups'])
+    n = choose_number()
+
     # Prompt the user
-    await message.respond("Do some excercise!")
+    await message.respond(f"{user}, do {n} {excercise}! RIGHT NOW!")
 
