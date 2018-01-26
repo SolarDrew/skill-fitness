@@ -24,7 +24,7 @@ def choose_number():
     return round(random.normal(loc=5, scale=3))
 
 
-@match_crontab("* * * * *", timezone="Europe/London")
+@match_crontab("30 * * * *", timezone="Europe/London")
 async def random_excercise(opsdroid, config, message):
     # Get the main connector and room
     connector = opsdroid.default_connector
