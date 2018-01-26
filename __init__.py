@@ -34,8 +34,8 @@ async def random_excercise(opsdroid, config, message):
     message = Message("", None, room, connector)
 
     # Choose who's doing the excercise this time.
-    user = choose_victim(['SolarDrew'])
-    excercise = choose_excercise(['sit ups'])
+    user = choose_victim(config['participants'])
+    excercise = choose_excercise(config['excercises'])
     n = choose_number()
 
     # Prompt the user
