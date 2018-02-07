@@ -11,7 +11,9 @@ def setup(opsdroid):
 
 def choose_victim(users):
     """Randomly choose one from a list of the people in the room."""
-    return random.choice(users)
+    n = len(users)
+    weights = [0.5, 0.1] + ([0.4/n]*n)
+    return random.choice([None, 'Everybody']+users, p=weights)
 
 
 def choose_excercise(excercise_options):
@@ -35,6 +37,8 @@ async def random_excercise(opsdroid, config, message):
 
     # Choose who's doing the excercise this time.
     user = choose_victim(config['participants'])
+    if not user:
+        return
     excercise = choose_excercise(config['excercises'])
     n = choose_number()
 
