@@ -23,7 +23,7 @@ def choose_excercise(excercise_options):
 
 def choose_number():
     """Determine number of repetitions for the selected exercise."""
-    return round(random.normal(loc=5, scale=3))
+    return round(random.normal(loc=10, scale=2))
 
 
 @match_crontab("/15 9-17 * * 1-5", timezone="Europe/London")
